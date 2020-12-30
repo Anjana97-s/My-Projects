@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <form>
+            <input  type="text" id="txt"/>
+            <div>
+            <input type="button" value="7" onclick="clk_btn(7)" class="btn"/>
+            <input type="button" value="8" onclick="clk_btn(8)" class="btn"/>
+            <input type="button" value="9" onclick="clk_btn(9)" class="btn"/>
+            <input type="button" value="/" onclick="op_btn('/')" class="btn"/>
+            </div>
+            <div>
+            <input type="button" value="4" onclick="clk_btn(4)" class="btn"/>
+            <input type="button" value="5" onclick="clk_btn(5)" class="btn"/>
+            <input type="button" value="6" onclick="clk_btn(6)" class="btn"/>
+            <input type="button" value="*" onclick="op_btn('*')" class="btn"/>
+            </div>
+            <div>
+            <input type="button" value="1" onclick="clk_btn(1)" class="btn"/>
+            <input type="button" value="2" onclick="clk_btn(2)" class="btn"/>
+            <input type="button" value="3" onclick="clk_btn(3)"class="btn"/>
+            <input type="button" value="-" onclick="op_btn('-')" class="btn"/>
+            </div>
+            <div>
+            <input type="button" value="0" onclick="clk_btn(0)" class="btn"/>
+            <input type="button" value="." onclick="clk_btn('.')"  class="btn"/>
+            <input type="button" value="=" onclick="exec()" class="btn"/>
+            <input type="button" value="+" onclick="op_btn('+')"  class="btn"/>
+            </div>
+            <div>
+            <input type="button" value="C" onclick="clr_btn()"  class="btn"/>
+            </div>
+            </form>
+</body>
+<script>
+    var op
+    var a
+    var b
+    var c
+    function clk_btn(val)
+    {
+    document.getElementById("txt").value+=val;
+    }
+    function clr_btn()
+    {
+    document.getElementById("txt").value="";
+    
+    }
+function op_btn(v)
+{
+     a=Number(document.getElementById("txt").value)
+     op=v
+    document.getElementById("txt").value="";
+
+}
+function exec()
+{
+b=Number((document.getElementById("txt").value))
+switch(op)
+{
+    case '+':
+    c=a+b
+    document.getElementById("txt").value=c
+    break;
+    case '-':
+    c=a-b
+    document.getElementById("txt").value=c
+    break;
+    case '*':
+    c=a*b
+    document.getElementById("txt").value=c
+    break;
+    case '/':
+    c=a/b
+    document.getElementById("txt").value=c
+    break;
+    default:
+    
+
+}
+}
+</script>
+</html>
